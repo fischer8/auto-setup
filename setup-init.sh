@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "INICIANDO..."
+echo " "
+echo " "
+echo "---------- APPS INSTALL ----------"
+echo " "
+echo " "
 
 sudo apt update 
 sudo apt-get update 
@@ -28,6 +32,12 @@ sudo snap install vlc
 sudo snap install code --classic
 sudo snap install tldr
 
+echo " "
+echo " "
+echo "---------- NVM INSTALL AND CONFIG ----------"
+echo " "
+echo " "
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
@@ -37,6 +47,12 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 nvm use node
 nvm alias default node
+
+echo " "
+echo " "
+echo "---------- NEOVIM CONFIG ----------"
+echo " "
+echo " "
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -48,49 +64,50 @@ rm -rf ~/temporary/
 mkdir ~/dev/
 git clone git@github.com:fischer8/next-sanofi.git ~/dev/
 
-content1="param=\$1
+echo " "
+echo " "
+echo "---------- BASH SCRIPTS AND DEFAULT CONFIG ----------"
+echo " "
+echo " "
+
+echo "param=\$1
 git add .
 git commit -m \"\$param\"
-git push -f"
+git push -f" > xgit
 
-content2="alias \"vim\"=\"nvim\"
+echo "#!/bin/bash
+cp -r ~/.config/nvim/ ~/Desktop/config
+cd ~/Desktop/config/ && xgit nvim" > nvb
+
+echo "xclip -selection clipboard" > xc
+
+echo "alias \"vim\"=\"nvim\"
 alias \"vi\"=\"nvim\"
 alias \"nano\"=\"nvim\"
 alias \"cl\"=\"clear\"
 alias \"q\"=\"exit\"
-alias \"tl\"=\"tldr\""
+alias \"tl\"=\"tldr\"" > .bash_aliases
 
-content3="keycode 112 = Home
-keycode 117 = End"
+echo "keycode 112 = Home
+keycode 117 = End" > .keymap.map
 
-content4="
-xmodmap ~/keymap.map"
-
-content5="#!/bin/bash
-cp -r ~/.config/nvim/ ~/Desktop/config
-cd ~/Desktop/config/ && xgit nvim"
-
-content6="xclip -selection clipboard"
-
-content7="
-PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '"
-
-content8="[user]
+echo "[user]
 email = fischxr@hotmail.com
 name = fischer8
 [init]
-defaultBranch = main"
+defaultBranch = main" > .gitconfig
 
-echo "$content1" > xgit
-echo "$content5" > nvb
-echo "$content6" > xc
+echo "
+xmodmap ~/keymap.map" >> $HOME/.bashrc
 
-echo "$content2" > .bash_aliases
-echo "$content3" > .keymap.map
-echo "$content8" > .gitconfig
+echo "
+PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
-echo "$content7" >> $HOME/.bashrc
-echo "$content4" >> $HOME/.bashrc
+echo " "
+echo " "
+echo "---------- MOVING CONFIG FILES ----------"
+echo " "
+echo " "
 
 sudo chmod 663 .keymap.map
 sudo chmod 663 ./.bash_aliases
@@ -98,6 +115,12 @@ sudo chmod 663 ./.gitconfig
 sudo mv -f ./.keymap.map ~/
 sudo mv -f ./.bash_aliases ~/
 sudo mv -f ./.gitconfig ~/
+
+echo " "
+echo " "
+echo "---------- MOVING BASH SCRIPTS ----------"
+echo " "
+echo " "
 
 sudo chmod 776 ./xgit
 sudo chmod 776 ./nvb
@@ -113,7 +136,7 @@ echo "----------------------------------------------"
 echo "----------------------------------------------"
 echo "----------------------------------------------"
 echo "----------------------------------------------"
-echo "----------------- CONCLUIDO ------------------"
+echo "-------------------- END ---------------------"
 echo "----------------------------------------------"
 echo "----------------------------------------------"
 echo "----------------------------------------------"
