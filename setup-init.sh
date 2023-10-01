@@ -73,7 +73,7 @@ cd ~/Desktop/config/ && xgit nvim"
 content6="xclip -selection clipboard"
 
 content7="
-PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\$ '"
+PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '"
 
 content8="[user]
 email = fischxr@hotmail.com
