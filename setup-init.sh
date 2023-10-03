@@ -3,21 +3,18 @@
 echo " "
 echo " "
 echo "---------- APPS INSTALL ----------"
-echo " "
-echo " "
-
 sudo apt update 
 sudo apt-get update 
 
-sudo apt-get install wget
-sudo apt-get install git
+sudo apt-get -y install wget
+sudo apt-get -y install git
 sudo apt-get -y install dconf-editor
 
-sudo apt install curl
-sudo apt install piper
-sudo apt install neovim
-sudo apt install xclip
+sudo apt -y install curl
+sudo apt -y install piper
+sudo apt -y install xclip
 
+sudo snap install nvim --classic
 sudo snap install audacity 
 sudo snap install gimp 
 sudo snap install gthumb-unofficial 
@@ -32,11 +29,9 @@ sudo snap install vlc
 sudo snap install code --classic
 sudo snap install tldr
 
-echo " "
+echo "STATUS OK"
 echo " "
 echo "---------- NVM INSTALL AND CONFIG ----------"
-echo " "
-echo " "
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
@@ -48,27 +43,9 @@ nvm install node
 nvm use node
 nvm alias default node
 
-echo " "
-echo " "
-echo "---------- NEOVIM CONFIG ----------"
-echo " "
-echo " "
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-git clone git@github.com:fischer8/config.git ~/temporary/
-mv -f ~/temporary/nvim/ ~/.config/
-rm -rf ~/temporary/
-
-mkdir ~/dev/
-git clone git@github.com:fischer8/next-sanofi.git ~/dev/
-
-echo " "
+echo "STATUS OK"
 echo " "
 echo "---------- BASH SCRIPTS AND DEFAULT CONFIG ----------"
-echo " "
-echo " "
 
 echo "param=\$1
 git add .
@@ -103,24 +80,12 @@ xmodmap ~/.keymap.map" >> $HOME/.bashrc
 echo "
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
-echo " "
-echo " "
-echo "---------- MOVING CONFIG FILES ----------"
-echo " "
-echo " "
-
 sudo chmod 663 .keymap.map
 sudo chmod 663 ./.bash_aliases
 sudo chmod 663 ./.gitconfig
 sudo mv -f ./.keymap.map ~/
 sudo mv -f ./.bash_aliases ~/
 sudo mv -f ./.gitconfig ~/
-
-echo " "
-echo " "
-echo "---------- MOVING BASH SCRIPTS ----------"
-echo " "
-echo " "
 
 sudo chmod 776 ./xgit
 sudo chmod 776 ./nvb
@@ -129,7 +94,29 @@ sudo mv -f ./nvb /usr/bin/
 sudo mv -f ./xgit /usr/bin/
 sudo mv -f ./xc /usr/bin/
 
+echo "STATUS OK"
 echo " "
+echo "---------- SSH KEY CONFIG ----------"
+
+ssh-keygen -t ed25519 -C "fischxr@hotmail.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_ed25519
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+git clone --depth 1 git@github.com:fischer8/config.git ~/temporary/
+mv -f ~/temporary/nvim/ ~/.config/
+rm -rf ~/temporary/
+
+mkdir ~/dev/
+git clone --depth 1 git@github.com:fischer8/next-sanofi.git ~/dev/
+
+echo " "
+echo " "
+echo " https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account "
 echo " "
 echo " "
 echo "----------------------------------------------"
