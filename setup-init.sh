@@ -19,7 +19,7 @@ sudo snap install audacity
 sudo snap install gimp 
 sudo snap install gthumb-unofficial 
 sudo snap install steam 
-sudo snap install chrome 
+sudo snap install chromium
 sudo snap install brave 
 sudo snap install postman
 sudo snap install shotcut --classic
