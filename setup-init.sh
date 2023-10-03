@@ -103,10 +103,12 @@ ssh-keygen -t ed25519 -C "fischxr@hotmail.com"
 eval "$(ssh-agent -s)"
 
 ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub | xc
 
-echo " SSH KEY CREATED NEED ADD TO GITHUB "
+echo " SSH PUB KEY COPIED TO CLIPBOARD "
+echo " ADD TO GITHUB "
 echo " https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account "
-echo " PRESS ANY KEY AFTER ADDING THE SSH TO GITHUB TO RESUME "
+echo " PRESS ANY KEY ONLY AFTER ADDING THE SSH TO GITHUB "
 read -s -n 1
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -118,6 +120,8 @@ rm -rf ~/temporary/
 
 mkdir ~/dev/
 git clone --depth 1 git@github.com:fischer8/next-sanofi.git ~/dev/
+
+source ~/.bashrc
 
 echo " "
 echo " "
