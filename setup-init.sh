@@ -98,7 +98,7 @@ name = fischer8
 defaultBranch = main" > .gitconfig
 
 echo "
-xmodmap ~/keymap.map" >> $HOME/.bashrc
+xmodmap ~/.keymap.map" >> $HOME/.bashrc
 
 echo "
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
@@ -124,10 +124,10 @@ echo " "
 
 sudo chmod 776 ./xgit
 sudo chmod 776 ./nvb
-sudo chmod 776 ./xclip
+sudo chmod 776 ./xc
 sudo mv -f ./nvb /usr/bin/
 sudo mv -f ./xgit /usr/bin/
-sudo mv -f ./xclip /usr/bin/
+sudo mv -f ./xc /usr/bin/
 
 echo " "
 echo " "
