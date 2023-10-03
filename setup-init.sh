@@ -5,6 +5,7 @@ echo " "
 echo "---------- APPS INSTALL ----------"
 sudo apt update 
 sudo apt-get update 
+sudo add-apt-repository ppa:graphics-drivers/ppa
 
 sudo apt-get -y install wget
 sudo apt-get -y install git
