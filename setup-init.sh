@@ -118,8 +118,6 @@ mv -f ~/temporary/nvim/ ~/.config/
 rm -rf ~/temporary/
 
 mkdir ~/dev/
-git clone --depth 1 git@github.com:fischer8/next-sanofi.git ~/dev/
-
 source ~/.bashrc
 
 echo " "
