@@ -58,8 +58,7 @@ cd ~/Desktop/config/ && xgit nvim" > nvb
 
 echo "xclip -selection clipboard" > xc
 
-echo "alias \"vim\"=\"nvim\"
-alias \"vi\"=\"nvim\"
+echo "alias \"vi\"=\"nvim\"
 alias \"nano\"=\"nvim\"
 alias \"cl\"=\"clear\"
 alias \"q\"=\"exit\"
