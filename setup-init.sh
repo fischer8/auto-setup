@@ -49,6 +49,9 @@ echo "STATUS OK"
 echo " "
 echo "---------- BASH SCRIPTS AND DEFAULT CONFIG ----------"
 
+gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
+gsettings set org.gnome.mutter center-new-windows true
+
 echo "param=\$1
 git add .
 git commit -m \"\$param\"
