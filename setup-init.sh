@@ -121,9 +121,9 @@ mkdir ~/.config/nvim/
 git clone --depth 1 git@github.com:fischer8/nvim.git ~/.config/nvim/
 
 mkdir ~/dev/
-source ~/.bashrc
 
 sudo apt install nvidia-driver-535
+source ~/.bashrc
 
 echo " "
 echo " "
