@@ -92,7 +92,7 @@ echo " "
 echo "---------- GITHUB SSH KEY CONFIG ----------"
 
 read -p "Github email: " EMAIL
-ssh-keygen -t ed25519 -C \"\$EMAIL\"
+ssh-keygen -t ed25519 -C "$EMAIL"
 
 eval "$(ssh-agent -s)"
 
