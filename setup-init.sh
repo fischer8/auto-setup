@@ -55,28 +55,28 @@ gsettings set org.gnome.mutter center-new-windows true
 echo "param=\$1
 git add .
 git commit -m \"\$param\"
-git push -f" > xgit
+git push -f" | sudo tee /usr/bin/xgit
 
 echo "#!/bin/bash
 cp -r ~/.config/nvim/* ~/Desktop/config/nvim/
-cd ~/Desktop/config/nvim/ && xgit nvim" > nvb
+cd ~/Desktop/config/nvim/ && xgit nvim" | sudo tee /usr/bin/nvb
 
-echo "xclip -selection clipboard" > xc
+echo "xclip -selection clipboard" | sudo tee /usr/bin/xc
 
 echo "alias \"vi\"=\"nvim\"
 alias \"nano\"=\"nvim\"
 alias \"cl\"=\"clear\"
 alias \"q\"=\"exit\"
-alias \"tl\"=\"tldr\"" > .bash_aliases
+alias \"tl\"=\"tldr\"" > $HOME/.bash_aliases
 
 echo "keycode 112 = Home
-keycode 117 = End" > .keymap.map
+keycode 117 = End" > $HOME/.keymap.map
 
 echo "[user]
 email = fischxr@hotmail.com
 name = fischer8
 [init]
-defaultBranch = main" > .gitconfig
+defaultBranch = main" > $HOME/.gitconfig
 
 echo "
 xmodmap ~/.keymap.map" >> $HOME/.bashrc
@@ -84,19 +84,13 @@ xmodmap ~/.keymap.map" >> $HOME/.bashrc
 echo "
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
-sudo chmod 663 .keymap.map
-sudo chmod 663 ./.bash_aliases
-sudo chmod 663 ./.gitconfig
-sudo mv -f ./.keymap.map ~/
-sudo mv -f ./.bash_aliases ~/
-sudo mv -f ./.gitconfig ~/
+sudo chmod 663 ~/.keymap.map
+sudo chmod 663 ~/.bash_aliases
+sudo chmod 663 ~/.gitconfig
 
-sudo chmod 776 ./xgit
-sudo chmod 776 ./nvb
-sudo chmod 776 ./xc
-sudo mv -f ./nvb /usr/bin/
-sudo mv -f ./xgit /usr/bin/
-sudo mv -f ./xc /usr/bin/
+sudo chmod 776 /usr/bin/xgit
+sudo chmod 776 /usr/bin/nvb
+sudo chmod 776 /usr/bin/xc
 
 mkdir ~/Desktop/config/
 
