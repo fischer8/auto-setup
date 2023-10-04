@@ -85,6 +85,7 @@ sudo chmod 776 /usr/bin/nvb
 sudo chmod 776 /usr/bin/xc
 
 mkdir ~/Desktop/config/
+mkdir ~/Desktop/obs/
 
 echo "STATUS OK"
 echo " "
