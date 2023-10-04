@@ -73,9 +73,8 @@ echo "keycode 112 = Home
 keycode 117 = End" > $HOME/.keymap.map
 
 echo "
-xmodmap ~/.keymap.map" >> $HOME/.bashrc
+xmodmap ~/.keymap.map
 
-echo "
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
 sudo chmod 663 ~/.keymap.map
