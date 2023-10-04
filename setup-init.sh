@@ -98,6 +98,8 @@ sudo mv -f ./nvb /usr/bin/
 sudo mv -f ./xgit /usr/bin/
 sudo mv -f ./xc /usr/bin/
 
+mkdir ~/Desktop/config/
+
 echo "STATUS OK"
 echo " "
 echo "---------- SSH KEY CONFIG ----------"
