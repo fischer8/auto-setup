@@ -89,7 +89,7 @@ mkdir ~/Desktop/obs/
 
 echo "STATUS OK"
 echo " "
-echo "---------- GITHUB SSH KEY CONFIG ----------"
+echo "---------- GENERATING GITHUB SSH KEY ----------"
 
 read -p "Github email: " EMAIL
 ssh-keygen -t ed25519 -C "$EMAIL"
