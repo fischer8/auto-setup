@@ -77,7 +77,7 @@ xmodmap ~/.keymap.map
 
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
-sudo chmod 663 ~/.keymap.map ~/.bash_aliases
+sudo chmod 664 ~/.keymap.map ~/.bash_aliases
 sudo chmod 776 /usr/bin/xgit /usr/bin/nvb /usr/bin/xc
 
 mkdir -p ~/backup/nvim/ ~/obs/remux ~/obs/mp4/ ~/dev/ ~/shotcut/raw/ ~/shotcut/mp4/
