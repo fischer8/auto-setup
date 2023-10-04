@@ -58,7 +58,7 @@ git commit -m \"\$param\"
 git push -f" > xgit
 
 echo "#!/bin/bash
-cp -r ~/.config/nvim/ ~/Desktop/config
+cp -r ~/.config/nvim/* ~/Desktop/config/nvim/
 cd ~/Desktop/config/nvim/ && xgit nvim" > nvb
 
 echo "xclip -selection clipboard" > xc
