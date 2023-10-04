@@ -72,12 +72,6 @@ alias \"tl\"=\"tldr\"" > $HOME/.bash_aliases
 echo "keycode 112 = Home
 keycode 117 = End" > $HOME/.keymap.map
 
-echo "[user]
-email = fischxr@hotmail.com
-name = fischer8
-[init]
-defaultBranch = main" > $HOME/.gitconfig
-
 echo "
 xmodmap ~/.keymap.map" >> $HOME/.bashrc
 
@@ -86,7 +80,6 @@ PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
 sudo chmod 663 ~/.keymap.map
 sudo chmod 663 ~/.bash_aliases
-sudo chmod 663 ~/.gitconfig
 
 sudo chmod 776 /usr/bin/xgit
 sudo chmod 776 /usr/bin/nvb
