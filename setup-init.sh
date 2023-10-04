@@ -118,10 +118,8 @@ read -s -n 1
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
- 
-git clone --depth 1 git@github.com:fischer8/config.git ~/temporary/
-
-git clone --depth 1 git@github.com:fischer8/config.git ~/dev/next-sanofi/
+mkdir ~/.config/nvim/
+git clone --depth 1 git@github.com:fischer8/nvim.git ~/.config/nvim/
 
 mkdir ~/dev/
 source ~/.bashrc
