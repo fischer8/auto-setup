@@ -58,8 +58,8 @@ git commit -m \"\$param\"
 git push -f" | sudo tee /usr/bin/xgit
 
 echo "#!/bin/bash
-cp -r ~/.config/nvim/* ~/Desktop/config/nvim/
-cd ~/Desktop/config/nvim/ && xgit nvim" | sudo tee /usr/bin/nvb
+cp -r ~/.config/nvim/* ~/backup/nvim/
+cd ~/.config/nvim/ && xgit nvim" | sudo tee /usr/bin/nvb
 
 echo "xclip -selection clipboard" | sudo tee /usr/bin/xc
 
@@ -77,15 +77,10 @@ xmodmap ~/.keymap.map
 
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
-sudo chmod 663 ~/.keymap.map
-sudo chmod 663 ~/.bash_aliases
+sudo chmod 663 ~/.keymap.map ~/.bash_aliases
+sudo chmod 776 /usr/bin/xgit /usr/bin/nvb /usr/bin/xc
 
-sudo chmod 776 /usr/bin/xgit
-sudo chmod 776 /usr/bin/nvb
-sudo chmod 776 /usr/bin/xc
-
-mkdir ~/Desktop/config/
-mkdir ~/Desktop/obs/
+mkdir -p ~/backup/nvim/ ~/obs/remux ~/obs/mp4/ ~/dev/ ~/shotcut/raw/ ~/shotcut/mp4/
 
 echo "STATUS OK"
 echo " "
@@ -111,8 +106,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 mkdir ~/.config/nvim/
 git clone --depth 1 git@github.com:fischer8/nvim.git ~/.config/nvim/
-
-mkdir ~/dev/
 
 sudo apt install nvidia-driver-535
 source ~/.bashrc
