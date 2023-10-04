@@ -108,8 +108,8 @@ cat ~/.ssh/id_ed25519.pub | xc
 
 echo " STATUS OK "
 echo " "
-echo "----- SSH PUB KEY COPIED TO CLIPBOARD ------"
-echo " ADD TO GITHUB "
+echo "--  SSH PUB KEY COPIED TO CLIPBOARD  --"
+echo "--  ADD TO GITHUB  --"
 echo " https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account "
 echo " CONTINUE ONLY AFTER ADDING THE SSH TO GITHUB (PRESS ANY KEY)"
 read -s -n 1
