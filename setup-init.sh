@@ -59,7 +59,7 @@ git push -f" > xgit
 
 echo "#!/bin/bash
 cp -r ~/.config/nvim/ ~/Desktop/config
-cd ~/Desktop/config/ && xgit nvim" > nvb
+cd ~/Desktop/config/nvim/ && xgit nvim" > nvb
 
 echo "xclip -selection clipboard" > xc
 
@@ -118,9 +118,10 @@ read -s -n 1
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+ 
 git clone --depth 1 git@github.com:fischer8/config.git ~/temporary/
-mv -f ~/temporary/nvim/ ~/.config/
-rm -rf ~/temporary/
+
+git clone --depth 1 git@github.com:fischer8/config.git ~/dev/next-sanofi/
 
 mkdir ~/dev/
 source ~/.bashrc
