@@ -109,7 +109,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xc
 
-echo " SSH PUB KEY COPIED TO CLIPBOARD "
+echo "----- SSH PUB KEY COPIED TO CLIPBOARD ------"
 echo " ADD TO GITHUB "
 echo " https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account "
 echo " PRESS ANY KEY ONLY AFTER ADDING THE SSH TO GITHUB "
