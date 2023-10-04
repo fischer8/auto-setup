@@ -96,19 +96,22 @@ mkdir ~/Desktop/config/
 
 echo "STATUS OK"
 echo " "
-echo "---------- SSH KEY CONFIG ----------"
+echo "---------- GITHUB SSH KEY CONFIG ----------"
 
-ssh-keygen -t ed25519 -C "fischxr@hotmail.com"
+read -p "Github email: " EMAIL
+ssh-keygen -t ed25519 -C \"\$EMAIL\"
 
 eval "$(ssh-agent -s)"
 
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xc
 
+echo " STATUS OK "
+echo " "
 echo "----- SSH PUB KEY COPIED TO CLIPBOARD ------"
 echo " ADD TO GITHUB "
 echo " https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account "
-echo " PRESS ANY KEY ONLY AFTER ADDING THE SSH TO GITHUB "
+echo " CONTINUE ONLY AFTER ADDING THE SSH TO GITHUB (PRESS ANY KEY)"
 read -s -n 1
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
