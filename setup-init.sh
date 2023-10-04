@@ -106,7 +106,6 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xc
 
-echo " STATUS OK "
 echo " "
 echo "--  SSH PUB KEY COPIED TO CLIPBOARD  --"
 echo "--  ADD TO GITHUB  --"
