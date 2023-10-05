@@ -31,7 +31,7 @@ sudo snap install code --classic
 sudo snap install tldr
 
 cd ~/Downloads/ && wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb
-sudo dpkg -i steam.deb
+sudo dpkg -i ~/Downloads/steam.deb
 
 echo "STATUS OK"
 echo " "
