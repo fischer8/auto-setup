@@ -20,7 +20,6 @@ sudo snap install nvim --classic
 sudo snap install audacity 
 sudo snap install gimp 
 sudo snap install gthumb-unofficial 
-sudo snap install steam 
 sudo snap install chromium
 sudo snap install brave 
 sudo snap install postman
@@ -30,6 +29,9 @@ sudo snap install kolourpaint
 sudo snap install vlc
 sudo snap install code --classic
 sudo snap install tldr
+
+curl -o ~/Downloads/steam.deb https://cdn.akamai.steamstatic.com/client/installer/steam.deb
+sudo dpkg -i ~/Downloads/steam.deb
 
 echo "STATUS OK"
 echo " "
