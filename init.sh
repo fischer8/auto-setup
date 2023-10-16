@@ -29,6 +29,7 @@ sudo snap install kolourpaint
 sudo snap install vlc
 sudo snap install code --classic
 sudo snap install tldr
+sudo snap install libreoffice
 
 cd ~/Downloads/ && wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb
 sudo dpkg -i ~/Downloads/steam.deb
