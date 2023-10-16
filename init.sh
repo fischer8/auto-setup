@@ -17,11 +17,11 @@ sudo apt -y install xclip
 sudo apt -y install lua5.4
 
 sudo snap install nvim --classic
-sudo snap install audacity 
-sudo snap install gimp 
-sudo snap install gthumb-unofficial 
+sudo snap install audacity
+sudo snap install gimp
+sudo snap install gthumb-unofficial
 sudo snap install chromium
-sudo snap install brave 
+sudo snap install brave
 sudo snap install postman
 sudo snap install shotcut --classic
 sudo snap install obs-studio
