@@ -10,12 +10,12 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get -y install wget
 sudo apt-get -y install git
 sudo apt-get -y install dconf-editor
-sudo apt-get -y install python3.10
 
 sudo apt -y install curl
 sudo apt -y install piper
 sudo apt -y install xclip
 sudo apt -y install lua5.4
+sudo apt install python3
 
 sudo snap install nvim --classic
 sudo snap install audacity
