@@ -49,6 +49,8 @@ nvm install node
 nvm use node
 nvm alias default node
 
+sudo npm install -g --unsafe-perm node-red
+
 echo "STATUS OK"
 echo " "
 echo "---------- BASH SCRIPTS AND DEFAULT CONFIG ----------"
