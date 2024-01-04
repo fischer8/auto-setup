@@ -32,12 +32,16 @@ sudo snap install code --classic
 sudo snap install tldr
 sudo snap install libreoffice
 
+sudo apt-get purge firefox
+sudo snap remove firefox
+sudo snap remove --purge firefox
+sudo rm -rf /etc/firefox/ /usr/lib/firefox/ /usr/lib/firefox-addons/
+
 cd ~/Downloads/ && wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb
 sudo dpkg -i ~/Downloads/steam.deb
 
-echo "STATUS OK"
 echo " "
-echo "---------- NVM INSTALL AND CONFIG ----------"
+echo "---------- NVM INSTALL ----------"
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
@@ -51,9 +55,8 @@ nvm alias default node
 
 npm install -g --unsafe-perm node-red
 
-echo "STATUS OK"
 echo " "
-echo "---------- BASH SCRIPTS AND DEFAULT CONFIG ----------"
+echo "---------- BASH SCRIPTS ----------"
 
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
 gsettings set org.gnome.mutter center-new-windows true
@@ -83,12 +86,12 @@ xmodmap ~/.keymap.map
 
 PS1='\\[\\e[38;2;0;95;135m\\]\\w\\[\\e[0m\\]\\\$ '" >> $HOME/.bashrc
 
-sudo chmod 664 ~/.keymap.map ~/.bash_aliases
-sudo chmod 776 /usr/bin/xgit /usr/bin/nvb /usr/bin/xc
+sudo chmod +x ~/.keymap.map ~/.bash_aliases
+sudo chmod +x /usr/bin/xgit /usr/bin/nvb /usr/bin/xc
+
 
 mkdir -p ~/backup/nvim/ ~/obs/remux ~/obs/mp4/ ~/dev/ ~/shotcut/raw/ ~/shotcut/mp4/
 
-echo "STATUS OK"
 echo " "
 echo "---------- GENERATING GITHUB SSH KEY ----------"
 
@@ -102,9 +105,8 @@ cat ~/.ssh/id_ed25519.pub | xc
 
 echo " "
 echo "--  SSH PUB KEY COPIED TO CLIPBOARD  --"
-echo "--  ADD TO GITHUB  --"
-echo " https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account "
-echo " CONTINUE ONLY AFTER ADDING THE SSH TO GITHUB (PRESS ANY KEY)"
+echo "--  ADD TO GITHUB......  --"
+echo "(PRESS ANY KEY TO CONTINUE)"
 read -s -n 1
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -115,6 +117,7 @@ git clone --depth 1 git@github.com:fischer8/nvim.git ~/.config/nvim/
 
 sudo apt install nvidia-driver-535
 source ~/.bashrc
+
 
 echo " "
 echo " "
