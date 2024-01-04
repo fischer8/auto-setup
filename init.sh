@@ -10,6 +10,7 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get -y install wget
 sudo apt-get -y install git
 sudo apt-get -y install dconf-editor
+sudo apt-get install ttf-ancient-fonts
 
 sudo apt -y install curl
 sudo apt -y install piper
