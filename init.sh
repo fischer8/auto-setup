@@ -44,10 +44,10 @@ sudo snap remove firefox
 sudo snap remove --purge firefox
 sudo rm -rf /etc/firefox/ /usr/lib/firefox/ /usr/lib/firefox-addons/
 
-sudo wget -O - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DroidSansMono.zip > ~/DroidSansMono.zip
-sudo unzip ~/DroidSansMono.zip -d /usr/share/fonts/
+sudo wget -O - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DroidSansMono.zip > ~/Downloads/DroidSansMono.zip
+sudo unzip ~/Downloads/DroidSansMono.zip -d /usr/share/fonts/
 
-sudo wget -O - https://cdn.akamai.steamstatic.com/client/installer/steam.deb > ~/Downloads/
+sudo wget -O - https://cdn.akamai.steamstatic.com/client/installer/steam.deb > ~/Downloads/steam.deb
 sudo dpkg -i ~/Downloads/steam.deb
 
 echo " "
