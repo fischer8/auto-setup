@@ -20,7 +20,7 @@ sudo apt -y install lua5.4
 sudo apt -y install python3
 
 
-commands=(
+apps=(
     "sudo apt -y install piper"
     "sudo snap install nvim --classic"
     "sudo snap install audacity"
@@ -38,7 +38,7 @@ commands=(
     "sudo snap install libreoffice"
 )
 
-parallel --jobs 4 ::: "${commands[@]}"
+parallel --jobs 4 ::: "${apps[@]}"
 
 sudo apt-get purge firefox
 sudo snap remove firefox
