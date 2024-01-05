@@ -11,16 +11,14 @@ sudo apt update
 sudo apt-get update 
 sudo add-apt-repository ppa:graphics-drivers/ppa
 
-sudo apt-get -y install wget
-sudo apt-get -y install git
-sudo apt-get -y install dconf-editor
-sudo apt -y install curl
-sudo apt -y install xclip
-sudo apt -y install lua5.4
-sudo apt -y install python3
-
-
 apps=(
+    "sudo apt-get -y install wget"
+    "sudo apt-get -y install git"
+    "sudo apt-get -y install dconf-editor"
+    "sudo apt -y install curl"
+    "sudo apt -y install xclip"
+    "sudo apt -y install lua5.4"
+    "sudo apt -y install python3"
     "sudo apt -y install piper"
     "sudo apt install gnome-tweaks"
     "sudo snap install nvim --classic"
