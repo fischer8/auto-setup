@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+sudo apt install parallel
+
+
 echo " "
 echo " "
 echo "---------- APPS INSTALL ----------"
@@ -10,27 +14,31 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get -y install wget
 sudo apt-get -y install git
 sudo apt-get -y install dconf-editor
-
 sudo apt -y install curl
-sudo apt -y install piper
 sudo apt -y install xclip
 sudo apt -y install lua5.4
-sudo apt install python3
+sudo apt -y install python3
 
-sudo snap install nvim --classic
-sudo snap install audacity
-sudo snap install gimp
-sudo snap install gthumb-unofficial
-sudo snap install chromium
-sudo snap install brave
-sudo snap install postman
-sudo snap install shotcut --classic
-sudo snap install obs-studio
-sudo snap install kolourpaint
-sudo snap install vlc
-sudo snap install code --classic
-sudo snap install tldr
-sudo snap install libreoffice
+
+commands=(
+    "sudo apt -y install piper"
+    "sudo snap install nvim --classic"
+    "sudo snap install audacity"
+    "sudo snap install gimp"
+    "sudo snap install gthumb-unofficial"
+    "sudo snap install chromium"
+    "sudo snap install brave"
+    "sudo snap install postman"
+    "sudo snap install shotcut --classic"
+    "sudo snap install obs-studio"
+    "sudo snap install kolourpaint"
+    "sudo snap install vlc"
+    "sudo snap install code --classic"
+    "sudo snap install tldr"
+    "sudo snap install libreoffice"
+)
+
+parallel --jobs 4 ::: "${commands[@]}"
 
 sudo apt-get purge firefox
 sudo snap remove firefox
