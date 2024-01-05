@@ -117,7 +117,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 mkdir ~/.config/nvim/
 git clone --depth 1 git@github.com:fischer8/nvim.git ~/.config/nvim/
 
-sudo apt install nvidia-driver-535
+sudo ubuntu-drivers autoinstall
 source ~/.bashrc
 
 
