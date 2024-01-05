@@ -22,6 +22,7 @@ sudo apt -y install python3
 
 apps=(
     "sudo apt -y install piper"
+    "sudo apt install gnome-tweaks"
     "sudo snap install nvim --classic"
     "sudo snap install audacity"
     "sudo snap install gimp"
