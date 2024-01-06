@@ -6,7 +6,7 @@ sudo apt install parallel
 
 echo " "
 echo " "
-echo "---------- APPS INSTALL ----------"
+echo "---------- APPS ----------"
 sudo apt update 
 sudo apt-get update 
 sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -51,7 +51,7 @@ sudo wget -O - https://cdn.akamai.steamstatic.com/client/installer/steam.deb > ~
 sudo dpkg -i ~/Downloads/steam.deb
 
 echo " "
-echo "---------- NVM INSTALL ----------"
+echo "---------- NVM ----------"
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
@@ -67,7 +67,7 @@ nvm alias default node
 npm install -g --unsafe-perm node-red
 
 echo " "
-echo "---------- BASH SCRIPTS ----------"
+echo "---------- CONFIG ----------"
 
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
 gsettings set org.gnome.mutter center-new-windows true
@@ -102,7 +102,7 @@ sudo chmod +x ~/.keymap.map ~/.bash_aliases /usr/bin/xgit /usr/bin/nvb /usr/bin/
 mkdir -p ~/backup/nvim/ ~/obs/remux ~/obs/mp4/ ~/dev/ ~/shotcut/raw/ ~/shotcut/mp4/
 
 echo " "
-echo "---------- GENERATING GITHUB SSH KEY ----------"
+echo "---------- GITHUB SSH KEY ----------"
 
 read -p "Github email: " EMAIL
 ssh-keygen -t ed25519 -C "$EMAIL"
